@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Amol Chand Public School</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="CSS/style.css">
+  <!-- Template Stylesheet -->
+    <link href="css/style-1.css" rel="stylesheet">
+</head>
+
+<body>
+  
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Hero Section with Background -->
+  <section class="hero-section text-center text-white d-flex align-items-center justify-content-center" id="heroSection" style="height: 60vh;">
+    <div>
+      <h1>Welcome to Amol Chand Public School</h1>
+      <p>Inspiring Excellence in Education & Character</p>
+    </div>
+  </section>
+
+  <!-- Place JS after the Section so DOM is ready -->
+  <script src="JS/BackgroundImage.js"></script>
+
+</body>
+
+
+  <!-- Top Buttons -->
+  
+
+<div class="container mt-5 text-center">
+  <div class="row justify-content-center g-3">
+    
+    <!-- Fee Structure Button -->
+    <div class="col-md-3 col-6">
+      <button id="showFeeBtn" class="btn btn-success w-100 py-2 shadow">
+        <i class="fas fa-rupee-sign me-2"></i> Fee Structure
+      </button>
+    </div>
+
+    <!-- Admission Query Button -->
+    <div class="col-md-3 col-6">
+      <button class="btn btn-danger w-100 py-2 shadow" data-bs-toggle="modal" data-bs-target="#admissionModal">
+        <i class="fas fa-file-alt me-2"></i> Admission Query
+      </button>
+    </div>
+
+    <!-- Admission Criteria Button -->
+    <div class="col-md-3 col-6">
+      <button class="btn btn-primary w-100 py-2 shadow" data-bs-toggle="modal" data-bs-target="#criteriaModal">
+        <i class="fas fa-info-circle me-2"></i> Admission Criteria
+      </button>
+    </div>
+    <div class="col-md-3 col-6">
+      <button class="btn btn-primary w-100 py-2 shadow" style="background-color: #42d41dbe; color: #000; border: 1px solid #ddd;" data-bs-toggle="modal" data-bs-target="#academicsModal">
+       <i class="fas fa-book-open me-2"></i> Academics
+      </button>
+    </div>
+ </div>
+</div>
+
+<!-- Admission Criteria Modal -->
+<div class="modal fade" id="criteriaModal" tabindex="-1" aria-labelledby="criteriaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="criteriaModalLabel">Admission Criteria</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body with Criteria Info -->
+      <div class="modal-body">
+        <h6>📋 Eligibility & Process:</h6>
+        <ul>
+          <li>✔ Nursery & KG - Minimum age 3+ years</li>
+          <li>✔ Class 1 onwards - Age as per standard norms</li>
+          <li>✔ Birth Certificate mandatory for admission</li>
+          <li>✔ Transfer Certificate required for Class 1 onwards</li>
+          <li>✔ Passport size photographs of student & parents</li>
+          <li>✔ Admission based on interaction/entrance test for Class 1 and above</li>
+        </ul>
+        <p class="mt-3">Please contact the school office for further details or clarifications.</p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Admission Modal -->
+<div class="modal fade" id="admissionModal" tabindex="-1" aria-labelledby="admissionModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="admissionModalLabel">Admission Form</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body with Form -->
+      <div class="modal-body">
+        <form id="admissionForm">
+
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="contactNumber" class="form-label">Contact Number</label>
+            <input type="tel" class="form-control" id="contactNumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="fatherName" class="form-label">Father's Name</label>
+            <input type="text" class="form-control" id="fatherName" placeholder="Enter father's name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="motherName" class="form-label">Mother's Name</label>
+            <input type="text" class="form-control" id="motherName" placeholder="Enter mother's name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="classSelect" class="form-label">Select Class</label>
+            <select class="form-select" id="classSelect" required>
+              <option value="">Choose...</option>
+              <option value="Nursery">Nursery</option>
+              <option value="KG">KG</option>
+              <option value="1">Class 1</option>
+              <option value="2">Class 2</option>
+              <option value="3">Class 3</option>
+              <option value="4">Class 4</option>
+              <option value="5">Class 5</option>
+              <option value="6">Class 6</option>
+              <option value="7">Class 7</option>
+              <option value="8">Class 8</option>
+              <option value="9">Class 9</option>
+              <option value="10">Class 10</option>
+              <option value="11">Class 11</option>
+              <option value="12">Class 12</option>
+            </select>
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-danger">Submit Admission Form</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- Fee Structure Section -->
+  <div id="feeSection" class="container mt-5" style="display:none;">
+    <div class="card shadow">
+      <div class="card-header bg-success text-white d-flex justify-content-between">
+        <h5 class="mb-0">📄 Fee Structure</h5>
+        <button class="btn-close btn-close-white" id="closeFeeBtn"></button>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered text-center">
+          <thead class="table-success">
+            <tr><th>Class</th><th>Tuition Fee</th><th>Annual Fee</th><th>Total</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Nursery - KG</td><td>₹12,000</td><td>₹3,000</td><td>₹15,000</td></tr>
+            <tr><td>Class 1 - 5</td><td>₹15,000</td><td>₹4,000</td><td>₹19,000</td></tr>
+            <tr><td>Class 6 - 8</td><td>₹18,000</td><td>₹5,000</td><td>₹23,000</td></tr>
+            <tr><td>Class 9 - 12</td><td>₹20,000</td><td>₹6,000</td><td>₹26,000</td></tr>
+          </tbody>
+        </table>
+        <a href="files/FeeStructure.pdf" class="btn btn-primary mt-3" download>
+          <i class="fas fa-download me-2"></i> Download Fee Structure
+        </a>
+      </div>
+    </div>
+  </div>
+
+<!-- Notice Section with Popup -->
+<div class="container mt-5">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-info d-flex justify-content-between align-items-center text-white">
+          Notice
+          <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#noticeModal">
+            View All Notices
+          </button>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>School starts from 2023-2024 <span class="badge bg-danger">NEW</span></li>
+            <li>Admissions Open for 2025-2026</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- News Section with Popup -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-warning d-flex justify-content-between align-items-center">
+          News
+          <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#newsModal">
+            View All News
+          </button>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Today:</strong> School Timing Updated</li>
+            <li>Sports Meet Winners Announced</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Notice Popup Modal -->
+<div class="modal fade" id="noticeModal" tabindex="-1" aria-labelledby="noticeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header bg-info text-white">
+        <h5 class="modal-title" id="noticeModalLabel">📢 All School Notices</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item">📢 23 June 2025 - Summer Camp Registration Open</li>
+          <li class="list-group-item">📢 20 June 2025 - New School Uniform Guidelines</li>
+          <li class="list-group-item">📢 18 June 2025 - PTM Scheduled on 25th June</li>
+          <li class="list-group-item">📢 15 June 2025 - School Timing Changed to 7:30 AM</li>
+        </ul>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- News Popup Modal -->
+<div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title" id="newsModalLabel">📰 Latest School News</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item">📰 22 June 2025 - Cricket Tournament This Weekend</li>
+          <li class="list-group-item">📰 20 June 2025 - Science Fair Results Announced</li>
+          <li class="list-group-item">📰 18 June 2025 - Art Competition Scheduled on 24th June</li>
+          <li class="list-group-item">📰 15 June 2025 - New Digital Classes Started</li>
+        </ul>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Academics Modal Popup -->
+<div class="modal fade" id="academicsModal" tabindex="-1" aria-labelledby="academicsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title fw-bold" id="academicsModalLabel">📚 Academics & Curriculum Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal Body with Full Details -->
+      <div class="modal-body">
+        <h6 class="fw-bold">Pre-Primary Curriculum</h6>
+        <p>Our Pre-Primary section focuses on developing foundational skills through fun, play-way methods, storytelling, art, and music to ensure holistic development of young learners.</p>
+
+        <h6 class="fw-bold mt-3">Primary Curriculum (Class 1 - 5)</h6>
+        <p>The Primary curriculum builds language, numeracy, science, and social understanding. Emphasis is placed on reading, writing, arithmetic, and basic life skills through activity-based learning.</p>
+
+        <h6 class="fw-bold mt-3">Middle Curriculum (Class 6 - 8)</h6>
+        <p>Subjects like Mathematics, Science, English, Social Science, and Computer Science form the core. Focus is on conceptual clarity, critical thinking, and project-based learning to prepare students for higher classes.</p>
+
+        <h6 class="fw-bold mt-3">Senior Secondary Curriculum (Class 9 - 12)</h6>
+        <p>Students are offered streams like Science, Commerce, and Humanities based on their interests and aptitude. Our aim is to prepare them for board exams, competitive exams, and future career paths with expert guidance and academic excellence.</p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Bootstrap & jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+      
+
+  <!-- Toppers -->
+  <div class="container mt-5 text-center">
+    <h2 class="fw-bold">Topper</h2>
+    <h3 class="text-primary fw-bold">Congratulations</h3>
+    <div class="row g-4 justify-content-center mt-4">
+      <div class="col-6 col-md-2"><img src="images/Top1.png" class="img-fluid rounded-circle"><h6>XYZ (12th-92.6%)</h6></div>
+      <div class="col-6 col-md-2"><img src="images/Top2.png" class="img-fluid rounded-circle"><h6>XYZ (10th-95.4%)</h6></div>
+      <div class="col-6 col-md-2"><img src="images/Top3.png" class="img-fluid rounded-circle"><h6>XYZ (10th-95.8%)</h6></div>
+      <div class="col-6 col-md-2"><img src="images/Top4.png" class="img-fluid rounded-circle"><h6>XYZ(12th-92%)</h6></div>
+    </div>
+  </div>
+
+  <!-- Facilities -->
+  <div class="container mt-5">
+  <h2 class="text-center fw-bold mb-4">🏫 Facilities</h2>
+  
+  <div class="row g-4">
+
+
+   
+<!-- Library Modal --> 
+  <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/libarery.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Library">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Library</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#libraryModal">View Details</button>
+      <a href="Library.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Library Modal -->
+<div class="modal fade" id="libraryModal" tabindex="-1" aria-labelledby="libraryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="libraryModalLabel">Library</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/libarery.png" class="img-fluid mb-3" alt="Library">
+        <p class="text-start">
+          Our Library is a hub of knowledge, equipped with a wide range of books, journals, and digital resources. It provides students with a peaceful environment for study, research, and self-learning, fostering reading habits and academic excellence.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Computer Lab Modal -->
+    <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/computer lab.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Computer Lab">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Computer Lab</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#computerLabModal">View Details</button>
+      <a href="ComputerLab.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Computer Lab Modal -->
+<div class="modal fade" id="computerLabModal" tabindex="-1" aria-labelledby="computerLabModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="computerLabModalLabel">Computer Lab</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/computer lab.png" class="img-fluid mb-3" alt="Computer Lab">
+        <p class="text-start">
+          Our Computer Lab is equipped with modern computers, high-speed internet, and the latest software to promote digital literacy. Students gain practical experience in coding, research, and technology-driven learning, preparing them for the digital world.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Science Lab Modal -->
+   <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/Science Lab.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Science Lab">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Science Lab</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#scienceLabModal">View Details</button>
+      <a href="ScienceLab.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Science Lab Modal -->
+<div class="modal fade" id="scienceLabModal" tabindex="-1" aria-labelledby="scienceLabModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="scienceLabModalLabel">Science Lab</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/Science Lab.png" class="img-fluid mb-3" alt="Science Lab">
+        <p class="text-start">
+          Our Science Lab is equipped with modern tools and equipment, providing students with the opportunity to perform experiments and explore scientific concepts practically. It fosters curiosity, critical thinking, and innovation in a safe and structured environment.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Digital Class Modal -->
+    <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/digital class.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Digital Class">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Digital Class</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#digitalClassModal">View Details</button>
+      <a href="DigitalClass.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Digital Class Modal -->
+<div class="modal fade" id="digitalClassModal" tabindex="-1" aria-labelledby="digitalClassModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="digitalClassModalLabel">Digital Classrooms</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/digital class.png" class="img-fluid mb-3" alt="Digital Class">
+        <p class="text-start">
+          Our Digital Classrooms are equipped with interactive boards, multimedia tools, and advanced technology to enhance learning. This smart infrastructure enables engaging lessons, visual presentations, and interactive sessions, making education more effective and enjoyable for students.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <!-- Hostel Modal -->
+    <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/Hostel.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Hostel">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Hostel</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#hostelModal">View Details</button>
+      <a href="Hostel.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Hostel Modal -->
+<div class="modal fade" id="hostelModal" tabindex="-1" aria-labelledby="hostelModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="hostelModalLabel">Hostel Facility</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/Hostel.png" class="img-fluid mb-3" alt="Hostel">
+        <p class="text-start">
+          Our Hostel facility provides a safe, comfortable, and homely environment for students. With separate accommodations for boys and girls, the hostel offers nutritious meals, 24/7 security, and all essential amenities to support academic success and personal growth.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Mobile Maths Lab Modal -->
+    <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/mobile maths lab.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Mobile Maths Lab">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Mobile Maths Lab</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#mobileMathsModal">View Details</button>
+      <a href="MobileMathsLab.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Maths Lab Modal -->
+<div class="modal fade" id="mobileMathsModal" tabindex="-1" aria-labelledby="mobileMathsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="mobileMathsModalLabel">Mobile Maths Lab</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/mobile maths lab.png" class="img-fluid mb-3" alt="Mobile Maths Lab">
+        <p class="text-start">
+          The Mobile Maths Lab brings mathematical concepts to life through hands-on activities and interactive tools. Designed to make learning mathematics engaging and fun, the lab travels to different classrooms, promoting logical thinking, problem-solving skills, and real-world applications.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Mobile Science Lab Modal -->
+    <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/mobile science lab.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Mobile Science Lab">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Mobile Science Lab</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#mobileScienceModal">View Details</button>
+      <a href="MobileScienceLab.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Science Lab Modal -->
+<div class="modal fade" id="mobileScienceModal" tabindex="-1" aria-labelledby="mobileScienceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="mobileScienceModalLabel">Mobile Science Lab</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/mobile science lab.png" class="img-fluid mb-3" alt="Mobile Science Lab">
+        <p class="text-start">
+          The Mobile Science Lab brings hands-on scientific experiments directly to students, enhancing curiosity and innovation. Equipped with essential tools and interactive setups, this facility ensures that scientific learning is accessible even in remote or resource-constrained areas.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Our Infrastructure Modal -->
+    <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/our infrastructure.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Our Infrastructure">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Our Infrastructure</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#infraModal">View Details</button>
+      <a href="Infrastructure.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Our Infrastructure Modal -->
+<div class="modal fade" id="infraModal" tabindex="-1" aria-labelledby="infraModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="infraModalLabel">Our Infrastructure</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/our infrastructure.png" class="img-fluid mb-3" alt="Our Infrastructure">
+        <p class="text-start">
+          Our Infrastructure is designed to support holistic education with state-of-the-art classrooms, modern labs, playgrounds, auditoriums, and other essential facilities. The campus is spacious, secure, and equipped to foster academic excellence and co-curricular development.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Security and Infra Modal -->
+    <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/Security and Infra.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Security and Infra">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Security and Infra</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#securityModal">View Details</button>
+      <a href="SecurityInfra.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Security and Infra Modal -->
+<div class="modal fade" id="securityModal" tabindex="-1" aria-labelledby="securityModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="securityModalLabel">Security and Infrastructure</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/Security and Infra.png" class="img-fluid mb-3" alt="Security and Infrastructure">
+        <p class="text-start">
+          Our institution maintains top-class security with 24/7 surveillance, secured entry points, and trained personnel. The infrastructure includes modern classrooms, safety measures, and emergency protocols, ensuring a secure and comfortable learning environment for all students.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Sick Room Modal -->
+    <div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/Sick Room.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Sick Room">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Sick Room</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#sickRoomModal">View Details</button>
+      <a href="SickRoom.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Sick Room Modal -->
+<div class="modal fade" id="sickRoomModal" tabindex="-1" aria-labelledby="sickRoomModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="sickRoomModalLabel">Sick Room</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/Sick Room.png" class="img-fluid mb-3" alt="Sick Room">
+        <p class="text-start">
+          The Sick Room is equipped to handle minor health issues and emergencies that arise during school hours. A trained medical attendant and basic first-aid facilities ensure student well-being while parents are informed promptly when required.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Transport System Modal -->
+<div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/Transport System.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Transport System">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Transport System</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#transportModal">View Details</button>
+      <a href="Transport.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Transport System Modal -->
+<div class="modal fade" id="transportModal" tabindex="-1" aria-labelledby="transportModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="transportModalLabel">Transport System</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/Transport System.png" class="img-fluid mb-3" alt="Transport System">
+        <p class="text-start">
+          Our Transport System ensures safe and reliable conveyance for students. Modern, GPS-enabled vehicles with trained staff provide hassle-free pick-up and drop-off facilities, covering urban and rural areas for the convenience of parents and students.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+     
+
+<!-- Example for Atal Tinkering Lab -->
+<div class="col-md-3 col-sm-6">
+  <div class="card h-100 shadow">
+    <img src="images/atal-tinkering-lab.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Atal-tinkering-lab">
+    <div class="card-body text-center">
+      <h5 class="fw-bold">Atal-Tinkering-Lab</h5>
+      <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#atlModal">View Details</button>
+      <a href="ATL.html" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="atlModal" tabindex="-1" aria-labelledby="atlModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="atlModalLabel">Atal Tinkering Lab</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <img src="images/atal-tinkering-lab.png" class="img-fluid mb-3" alt="Atal Tinkering Lab">
+        <p class="text-start">
+          Atal Tinkering Lab (ATL) is an initiative to foster curiosity, creativity, and imagination in young minds. Equipped with modern tools, the ATL encourages students to innovate and experiment with technology, promoting hands-on learning and STEM education.
+        </p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+  <!-- Testimonials -->
+  <div class="container mt-5 mb-5">
+    <h2 class="text-center fw-bold">💬 What Students Say</h2>
+    <div id="testimonialCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner text-center bg-white shadow rounded p-4">
+        <div class="carousel-item active"><img src="images/Top1.png" class="rounded-circle mb-3" width="80"><p>"Best learning experience."</p><h6>XYZ (10th)</h6></div>
+        <div class="carousel-item"><img src="images/Top2.png" class="rounded-circle mb-3" width="80"><p>"Excellent teachers and labs."</p><h6>XYZ (12th)</h6></div>
+        <div class="carousel-item"><img src="images/Top3.png" class="rounded-circle mb-3" width="80"><p>"Growth opportunities are amazing."</p><h6>XYZ (9th)</h6></div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <!-- Copyright Start -->
+    <div class="container-fluid copyright text-light py-2 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 text-left text-md-start mb-2 mb-md-0">
+                    &copy; <a href="#">2025 Amol Chand Public School</a>, All Right Reserved.
+                </div>
+		<div class="col-md-7 mb-2 mb-md-0">
+  <div class="d-flex justify-content-end align-items-center pt-2">
+    
+    <!-- "Follow Us" Text -->
+    <h6 class="text-white me-3 mb-0">Follow Us</h6>
+    
+    <!-- Social Icons -->
+    <a class="btn btn-square btn-outline-light me-1" href="#"><i class="fab fa-instagram"></i></a>
+    <a class="btn btn-square btn-outline-light me-1" href="#"><i class="fab fa-facebook-f"></i></a>
+    <a class="btn btn-square btn-outline-light me-1" href="#"><i class="fab fa-youtube"></i></a>
+    <a class="btn btn-square btn-outline-light" href="#"><i class="fab fa-linkedin-in"></i></a>
+
+  </div>
+</div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function(){
+      $('#header').load('/includes/header.html');
+      $('#showFeeBtn').click(function(){ $('#feeSection').slideDown(); });
+      $('#closeFeeBtn').click(function(){ $('#feeSection').slideUp(); });
+    });
+
+    document.getElementById('admissionForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Admission form submitted successfully!');
+      this.reset();
+      bootstrap.Modal.getInstance(document.getElementById('admissionModal')).hide();
+    });
+  </script>
+</body>
+</html>
