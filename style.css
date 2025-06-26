@@ -72,6 +72,24 @@ header h2 {
   background-position: center;
   transition: background-image 1s ease-in-out;
 }
+.hero-section {
+  width: 80%;  /* Slightly less width */
+  height: 300px;  /* Adjust as needed */
+  margin: 20px auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px black;
+  transition: background-image 1s ease-in-out;
+}
+
 
 /* Hero section text styling */
 .hero-section h1 {
