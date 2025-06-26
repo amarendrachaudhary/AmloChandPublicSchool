@@ -1,10 +1,11 @@
+
 window.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('heroSection');
 
   const images = [
-    'https://github.com/amarendrachaudhary/AmloChandPublicSchool/blob/main/school1.png',
-    'https://github.com/amarendrachaudhary/AmloChandPublicSchool/blob/main/school2.png',
-    'https://github.com/amarendrachaudhary/AmloChandPublicSchool/blob/main/school3.png'
+    'https://raw.githubusercontent.com/amarendrachaudhary/AmloChandPublicSchool/main/school1.png',
+    'https://raw.githubusercontent.com/amarendrachaudhary/AmloChandPublicSchool/main/school2.png',
+    'https://raw.githubusercontent.com/amarendrachaudhary/AmloChandPublicSchool/main/school3.png'
   ];
 
   let index = 0;
