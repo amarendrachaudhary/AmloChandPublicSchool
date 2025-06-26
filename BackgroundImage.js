@@ -3,8 +3,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const images = [
     'https://github.com/amarendrachaudhary/AmloChandPublicSchool/blob/main/school1.png',
-    'school2.png',
-    'school3.png'
+    'https://github.com/amarendrachaudhary/AmloChandPublicSchool/blob/main/school2.png',
+    'https://github.com/amarendrachaudhary/AmloChandPublicSchool/blob/main/school3.png'
   ];
 
   let index = 0;
