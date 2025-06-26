@@ -1,6 +1,5 @@
-
 window.addEventListener('DOMContentLoaded', () => {
-  const hero = document.getElementById('hero-section');
+  const hero = document.getElementById('heroSection');  // Make sure the ID matches!
 
   const images = [
     'https://raw.githubusercontent.com/amarendrachaudhary/AmloChandPublicSchool/main/school1.png',
@@ -15,10 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
     index = (index + 1) % images.length;
   }
 
-  // Initial image
   changeBackground();
-
-  // Change every 3 seconds
   setInterval(changeBackground, 3000);
 });
-
