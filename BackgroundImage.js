@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('heroSection');  // Make sure the ID matches!
 
   const images = [
-    'https://raw.githubusercontent.com/amarendrachaudhary/AmloChandPublicSchool/main/school1.png',
+    'school1.png',
     'https://raw.githubusercontent.com/amarendrachaudhary/AmloChandPublicSchool/main/school2.png',
     'https://raw.githubusercontent.com/amarendrachaudhary/AmloChandPublicSchool/main/school3.png'
   ];
