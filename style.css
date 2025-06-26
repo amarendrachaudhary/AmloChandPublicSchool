@@ -58,25 +58,29 @@ header h2 {
 .text-highlight {
   color: #007bff;
 }
- /* Hero section with background image */
-
-
+/* Hero section with background image */
 .hero-section {
-  width: 80%;  /* Slightly less width */
-  height: 300px;  /* Adjust as needed */
-  margin: 20px auto;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 85%;           /* Adjust width, can tweak between 80-90% */
+  height: 350px;        /* Good height, adjust as needed */
+  margin: 20px auto;    /* Center the section */
+  padding: 20px;
+  
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 2rem;
-  text-shadow: 2px 2px 5px black;
+  align-items: center;
+  text-align: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: background-image 1s ease-in-out;
+  
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 
