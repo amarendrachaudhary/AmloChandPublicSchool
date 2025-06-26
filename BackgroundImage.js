@@ -2,9 +2,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('heroSection');
 
   const images = [
-    'images/school1.png',
-    'images/school2.png',
-    'images/school3.png'
+    'school1.png',
+    'school2.png',
+    'school3.png'
   ];
 
   let index = 0;
