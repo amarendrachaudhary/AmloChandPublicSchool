@@ -1,6 +1,6 @@
 
 window.addEventListener('DOMContentLoaded', () => {
-  const hero = document.getElementById('heroSection');
+  const hero = document.getElementById('hero-section');
 
   const images = [
     'https://raw.githubusercontent.com/amarendrachaudhary/AmloChandPublicSchool/main/school1.png',
