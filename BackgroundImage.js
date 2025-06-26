@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('heroSection');
 
   const images = [
-    'school1.png',
+    'https://github.com/amarendrachaudhary/AmloChandPublicSchool/blob/main/school1.png',
     'school2.png',
     'school3.png'
   ];
