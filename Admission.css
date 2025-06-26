@@ -1,0 +1,9 @@
+#admissionSection .card {
+  border-radius: 15px;
+  background-color: #fefefe;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+#admissionSection h3 {
+  color: #198754;
+  font-weight: bold;
+}

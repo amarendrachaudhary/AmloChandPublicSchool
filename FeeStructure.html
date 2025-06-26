@@ -1,0 +1,62 @@
+<div class="container mt-5 pt-4 text-center top-buttons">
+  <div class="row justify-content-center g-3">
+    
+    <!-- Fee Structure Button -->
+    <div class="container text-center top-buttons">
+    <div class="row justify-content-center g-3">
+      <div class="col-md-3 col-6">
+        <button id="showFeeBtn" class="btn btn-success w-100 py-2 shadow btn-pill">
+          <i class="fas fa-rupee-sign me-2"></i> Fee Structure
+        </button>
+      </div>
+      <div class="col-md-3 col-6">
+        <button class="btn btn-danger w-100 py-2 shadow btn-pill">
+          <i class="fas fa-file-alt me-2"></i> Admission Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fee Structure Section -->
+  <div id="feeSection" class="container">
+    <div class="card shadow-lg border-0 mt-4">
+      <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">📄 Fee Structure</h4>
+        <button class="btn-close btn-close-white" aria-label="Close" id="closeFeeBtn"></button>
+      </div>
+      <div class="card-body">
+        <p class="text-muted">Here is the fee structure for the academic session:</p>
+
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover text-center align-middle">
+            <thead class="table-success">
+              <tr>
+                <th>Class</th>
+                <th>Tuition Fee</th>
+                <th>Annual Fee</th>
+                <th>Total (Yearly)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Nursery - KG</td><td>₹12,000</td><td>₹3,000</td><td>₹15,000</td></tr>
+              <tr><td>Class 1 - 5</td><td>₹15,000</td><td>₹4,000</td><td>₹19,000</td></tr>
+              <tr><td>Class 6 - 8</td><td>₹18,000</td><td>₹5,000</td><td>₹23,000</td></tr>
+              <tr><td>Class 9 - 12</td><td>₹20,000</td><td>₹6,000</td><td>₹26,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="files/FeeStructure.pdf" class="btn btn-primary mt-3" download>
+          <i class="fas fa-download me-2"></i> Download Fee Structure (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Custom JS -->
+  <script src="JS/FeeStructure.js"></script>
+  
