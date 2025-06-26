@@ -60,18 +60,7 @@ header h2 {
 }
  /* Hero section with background image */
 
-.hero-section {
-  height: 80vh;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 1s ease-in-out;
-}
+
 .hero-section {
   width: 80%;  /* Slightly less width */
   height: 300px;  /* Adjust as needed */
