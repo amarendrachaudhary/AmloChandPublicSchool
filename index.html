@@ -120,36 +120,36 @@
 
       <!-- Modal Body with Form -->
       <div class="modal-body">
-        <form id="admissionForm">
+        <form id="admissionForm" action="https://sheetdb.io/api/v1/37dqmbda3yhj3" method="post">
 
           <div class="mb-3">
             <label for="fullName" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+            <input type="text" name="data[Full Name]" class="form-control" id="fullName" placeholder="Enter your full name" required>
           </div>
 
           <div class="mb-3">
             <label for="email" class="form-label">Email Address</label>
-            <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required>
+            <input type="email" name="data[Email Address]" class="form-control" id="email" placeholder="example@gmail.com" required>
           </div>
 
           <div class="mb-3">
             <label for="contactNumber" class="form-label">Contact Number</label>
-            <input type="tel" class="form-control" id="contactNumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+            <input type="tel"  name="data[Contact Number]" class="form-control" id="contactNumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
           </div>
 
           <div class="mb-3">
             <label for="fatherName" class="form-label">Father's Name</label>
-            <input type="text" class="form-control" id="fatherName" placeholder="Enter father's name" required>
+            <input type="text" name="data[Father's Name]" class="form-control" id="fatherName" placeholder="Enter father's name" required>
           </div>
 
           <div class="mb-3">
             <label for="motherName" class="form-label">Mother's Name</label>
-            <input type="text" class="form-control" id="motherName" placeholder="Enter mother's name" required>
+            <input type="text" name="data[Mother's Name]" class="form-control" id="motherName" placeholder="Enter mother's name" required>
           </div>
 
           <div class="mb-3">
             <label for="classSelect" class="form-label">Select Class</label>
-            <select class="form-select" id="classSelect" required>
+            <select name="data[Select Class]" class="form-select" id="classSelect" required>
               <option value="">Choose...</option>
               <option value="Nursery">Nursery</option>
               <option value="KG">KG</option>
@@ -174,6 +174,7 @@
 
         </form>
       </div>
+
 
     </div>
   </div>
