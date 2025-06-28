@@ -108,48 +108,46 @@
 
 
 <!-- Admission Modal -->
+<!-- Admission Modal -->
 <div class="modal fade" id="admissionModal" tabindex="-1" aria-labelledby="admissionModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header bg-danger text-white">
-        <h5 class="modal-title" id="admissionModalLabel">Admission Form</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-header">
+        <h5 class="modal-title" id="admissionModalLabel">Student Admission Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <!-- Modal Body with Form -->
       <div class="modal-body">
-        <form id="admissionForm" action="https://sheetdb.io/api/v1/37dqmbda3yhj3" method="post">
-
+        <form id="admissionForm">
           <div class="mb-3">
             <label for="fullName" class="form-label">Full Name</label>
-            <input type="text" name="data[Full Name]" class="form-control" id="fullName" placeholder="Enter your full name" required>
+            <input type="text" name="Full Name" class="form-control" id="fullName" placeholder="Enter your full name" required>
           </div>
 
           <div class="mb-3">
             <label for="email" class="form-label">Email Address</label>
-            <input type="email" name="data[Email Address]" class="form-control" id="email" placeholder="example@gmail.com" required>
+            <input type="email" name="Email Address" class="form-control" id="email" placeholder="example@gmail.com" required>
           </div>
 
           <div class="mb-3">
             <label for="contactNumber" class="form-label">Contact Number</label>
-            <input type="tel"  name="data[Contact Number]" class="form-control" id="contactNumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+            <input type="tel" name="Contact Number" class="form-control" id="contactNumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
           </div>
 
           <div class="mb-3">
             <label for="fatherName" class="form-label">Father's Name</label>
-            <input type="text" name="data[Father's Name]" class="form-control" id="fatherName" placeholder="Enter father's name" required>
+            <input type="text" name="Father's Name" class="form-control" id="fatherName" placeholder="Enter father's name" required>
           </div>
 
           <div class="mb-3">
             <label for="motherName" class="form-label">Mother's Name</label>
-            <input type="text" name="data[Mother's Name]" class="form-control" id="motherName" placeholder="Enter mother's name" required>
+            <input type="text" name="Mother's Name" class="form-control" id="motherName" placeholder="Enter mother's name" required>
           </div>
 
           <div class="mb-3">
             <label for="classSelect" class="form-label">Select Class</label>
-            <select name="data[Select Class]" class="form-select" id="classSelect" required>
+            <select name="Select Class" class="form-select" id="classSelect" required>
               <option value="">Choose...</option>
               <option value="Nursery">Nursery</option>
               <option value="KG">KG</option>
@@ -168,17 +166,19 @@
             </select>
           </div>
 
-          <div class="d-grid">
+          <div class="d-grid mt-4">
             <button type="submit" class="btn btn-danger">Submit Admission Form</button>
           </div>
-
         </form>
       </div>
-
 
     </div>
   </div>
 </div>
+
+<!-- JS file -->
+<script src="JS/Form.js"></script>
+
 
 
   <!-- Fee Structure Section -->
