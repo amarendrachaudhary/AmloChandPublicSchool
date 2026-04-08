@@ -1,62 +1,122 @@
 <div class="container mt-5 pt-4 text-center top-buttons">
   <div class="row justify-content-center g-3">
-    
-    <!-- Fee Structure Button -->
+
+    <!-- Top Buttons -->
     <div class="container text-center top-buttons">
-    <div class="row justify-content-center g-3">
-      <div class="col-md-3 col-6">
-        <button id="showFeeBtn" class="btn btn-success w-100 py-2 shadow btn-pill">
-          <i class="fas fa-rupee-sign me-2"></i> Fee Structure
-        </button>
-      </div>
-      <div class="col-md-3 col-6">
-        <button class="btn btn-danger w-100 py-2 shadow btn-pill">
-          <i class="fas fa-file-alt me-2"></i> Admission Now
-        </button>
+      <div class="row justify-content-center g-3">
+        <div class="col-md-3 col-6">
+          <button id="showFeeBtn" class="btn btn-success w-100 py-2 shadow btn-pill">
+            <i class="fas fa-rupee-sign me-2"></i> Fee Structure
+          </button>
+        </div>
+        <div class="col-md-3 col-6">
+          <button class="btn btn-danger w-100 py-2 shadow btn-pill">
+            <i class="fas fa-file-alt me-2"></i> Admission Now
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Fee Structure Section -->
-  <div id="feeSection" class="container">
-    <div class="card shadow-lg border-0 mt-4">
-      <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">📄 Fee Structure</h4>
-        <button class="btn-close btn-close-white" aria-label="Close" id="closeFeeBtn"></button>
-      </div>
-      <div class="card-body">
-        <p class="text-muted">Here is the fee structure for the academic session:</p>
+    <!-- Fee Structure Section -->
+    <div id="feeSection" class="container mt-4" style="display:none;">
+      <div class="card shadow-lg border-0">
 
-        <div class="table-responsive">
-          <table class="table table-bordered table-hover text-center align-middle">
-            <thead class="table-success">
-              <tr>
-                <th>Class</th>
-                <th>Tuition Fee</th>
-                <th>Annual Fee</th>
-                <th>Total (Yearly)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Nursery - KG</td><td>₹12,000</td><td>₹3,000</td><td>₹15,000</td></tr>
-              <tr><td>Class 1 - 5</td><td>₹15,000</td><td>₹4,000</td><td>₹19,000</td></tr>
-              <tr><td>Class 6 - 8</td><td>₹18,000</td><td>₹5,000</td><td>₹23,000</td></tr>
-              <tr><td>Class 9 - 12</td><td>₹20,000</td><td>₹6,000</td><td>₹26,000</td></tr>
-            </tbody>
-          </table>
+        <!-- Card Header -->
+        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0"><i class="fas fa-file-invoice-dollar me-2"></i>Fee Structure — Session 2026-27</h5>
+          <button class="btn-close btn-close-white" aria-label="Close" id="closeFeeBtn"></button>
         </div>
 
-        <a href="files/FeeStructure.pdf" class="btn btn-primary mt-3" download>
-          <i class="fas fa-download me-2"></i> Download Fee Structure (PDF)
-        </a>
+        <div class="card-body px-3 px-md-4 py-4">
+
+          <!-- School name -->
+          <p class="text-muted small mb-3">Amol Chand Public School, Sikandra Rao, Hathras</p>
+
+          <!-- Class Group Tabs -->
+          <div class="mb-3 text-start">
+            <p class="text-muted small fw-semibold mb-2 text-uppercase" style="letter-spacing:.05em;">Select Class Group</p>
+            <div class="d-flex flex-wrap gap-2" id="groupTabs">
+              <button class="btn btn-sm btn-outline-success group-tab active" data-group="nursery">Nursery &amp; KG</button>
+              <button class="btn btn-sm btn-outline-success group-tab" data-group="primary">Class I – V</button>
+              <button class="btn btn-sm btn-outline-success group-tab" data-group="middle">Class VI – VIII</button>
+              <button class="btn btn-sm btn-outline-success group-tab" data-group="high">Class IX – X</button>
+              <button class="btn btn-sm btn-outline-success group-tab" data-group="senior">Class XI – XII</button>
+            </div>
+          </div>
+
+          <!-- Class Selector within group -->
+          <div class="mb-3 text-start">
+            <p class="text-muted small fw-semibold mb-2 text-uppercase" style="letter-spacing:.05em;">Select Class</p>
+            <div class="d-flex flex-wrap gap-2" id="classTabs"></div>
+          </div>
+
+          <!-- Summary Cards -->
+          <div class="row g-3 mb-4" id="summaryCards">
+            <div class="col-4">
+              <div class="p-3 rounded-3 bg-success bg-opacity-10 text-start">
+                <p class="text-muted small mb-1" style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;">Fees at Admission</p>
+                <p class="mb-0 fw-semibold text-success fs-5" id="sum-april">—</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-3 rounded-3 bg-primary bg-opacity-10 text-start">
+                <p class="text-muted small mb-1" style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;">Monthly Fee</p>
+                <p class="mb-0 fw-semibold text-primary fs-5" id="sum-monthly">—</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-3 rounded-3 bg-warning bg-opacity-10 text-start">
+                <p class="text-muted small mb-1" style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;">Total Yearly</p>
+                <p class="mb-0 fw-semibold text-warning fs-5" id="sum-yearly">—</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detailed Breakdown Table -->
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center align-middle mb-0">
+              <thead class="table-success">
+                <tr>
+                  <th class="text-start">Particular</th>
+                  <th>Amount (₹)</th>
+                </tr>
+              </thead>
+              <tbody id="feeTableBody">
+                <tr><td class="text-start">Prospectus</td><td id="r-pros">—</td></tr>
+                <tr><td class="text-start">Admission Charge</td><td id="r-adm">—</td></tr>
+                <tr><td class="text-start">Registration Charges</td><td id="r-reg">—</td></tr>
+                <tr><td class="text-start">Board Fee &amp; Misc.</td><td id="r-board">—</td></tr>
+                <tr><td class="text-start">Annual Charges</td><td id="r-annual">—</td></tr>
+                <tr><td class="text-start">Activity Fee (Quarterly)</td><td id="r-activity">—</td></tr>
+                <tr><td class="text-start">Monthly Fee</td><td id="r-monthly">—</td></tr>
+                <tr><td class="text-start">Lab Charges</td><td id="r-lab">—</td></tr>
+                <tr class="table-success fw-semibold">
+                  <td class="text-start">Total Fees at Time of April</td>
+                  <td id="r-april">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-muted mt-2 mb-3" style="font-size:12px;">
+            * Monthly Activity Fee: ₹1,500 (NC–VIII) &nbsp;|&nbsp; ₹1,800 (IX onwards)
+          </p>
+
+          <!-- Download Button -->
+          <a href="FeeStructure.pdf" class="btn btn-primary mt-1" download>
+            <i class="fas fa-download me-2"></i> Download Fee Structure (PDF)
+          </a>
+
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <!-- Custom JS -->
-  <script src="JS/FeeStructure.js"></script>
-  
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- Custom JS -->
+<script src="FeeStructure.js"></script>
