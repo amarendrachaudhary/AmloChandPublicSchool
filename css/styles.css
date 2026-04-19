@@ -435,7 +435,13 @@ textarea:focus-visible {
         padding: 16px 20px;
     }
 
-    .nav-links li a { padding: 12px 16px; border-radius: 10px; display: block; }
+    .nav-links li a { padding: 12px 16px; border-radius: 10px; display: block; text-align: center; }
+    
+    /* Center align dropdown items in mobile */
+    .nav-dropdown > a {
+        text-align: center;
+        justify-content: center;
+    }
 
     .school-name { font-size: 1rem; }
 }
