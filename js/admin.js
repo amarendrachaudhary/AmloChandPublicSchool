@@ -45,6 +45,7 @@ function initLoginForm() {
             const response = await api.login(username, password);
             
             localStorage.setItem('adminLoggedIn', 'true');
+            localStorage.setItem('adminToken', 'true'); // For admin page authentication
             localStorage.setItem('adminName', response.admin?.username || 'Administrator');
             
             showMessage('loginMsg', 'success', 'Login successful! Redirecting...');
@@ -57,6 +58,7 @@ function initLoginForm() {
             // Fallback to local authentication for demo
             if (username === 'admin' && password === 'admin123') {
                 localStorage.setItem('adminLoggedIn', 'true');
+                localStorage.setItem('adminToken', 'true'); // For admin page authentication
                 localStorage.setItem('adminName', 'Administrator');
                 
                 showMessage('loginMsg', 'success', 'Login successful! (Demo Mode)');
@@ -82,6 +84,7 @@ function initLogout() {
     logoutBtn.addEventListener('click', () => {
         if (confirm('Are you sure you want to logout?')) {
             localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminToken'); // Remove admin token
             localStorage.removeItem('adminName');
             checkLoginStatus();
         }
