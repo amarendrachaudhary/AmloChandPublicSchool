@@ -2,6 +2,11 @@
    RESULTS ADMIN FUNCTIONALITY
 ========================================= */
 
+// Authentication Check - Redirect to login if not authenticated
+if (!localStorage.getItem('adminToken')) {
+    window.location.href = 'admin.html';
+}
+
 let resultsDatabase = JSON.parse(localStorage.getItem('resultsDatabase')) || [];
 let selectedFile = null;
 

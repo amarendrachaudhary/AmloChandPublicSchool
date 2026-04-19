@@ -2,6 +2,11 @@
    DOWNLOADS ADMIN FUNCTIONALITY
 ========================================= */
 
+// Authentication Check - Redirect to login if not authenticated
+if (!localStorage.getItem('adminToken')) {
+    window.location.href = 'admin.html';
+}
+
 let filesDatabase = JSON.parse(localStorage.getItem('filesDatabase')) || [];
 let selectedFile = null;
 

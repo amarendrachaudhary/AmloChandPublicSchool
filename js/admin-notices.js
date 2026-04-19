@@ -2,6 +2,11 @@
    NOTICE BOARD ADMIN FUNCTIONALITY
 ========================================= */
 
+// Authentication Check - Redirect to login if not authenticated
+if (!localStorage.getItem('adminToken')) {
+    window.location.href = 'admin.html';
+}
+
 let noticesDatabase = [];
 
 document.addEventListener('DOMContentLoaded', () => {

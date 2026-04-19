@@ -2,6 +2,11 @@
    ABOUT SECTION ADMIN FUNCTIONALITY
 ========================================= */
 
+// Authentication Check - Redirect to login if not authenticated
+if (!localStorage.getItem('adminToken')) {
+    window.location.href = 'admin.html';
+}
+
 let aboutData = JSON.parse(localStorage.getItem('aboutData')) || {
     schoolInfo: {
         name: 'Amol Chand Public School',

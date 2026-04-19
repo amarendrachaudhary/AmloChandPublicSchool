@@ -2,6 +2,11 @@
    TOPPERS ADMIN FUNCTIONALITY
 ========================================= */
 
+// Authentication Check - Redirect to login if not authenticated
+if (!localStorage.getItem('adminToken')) {
+    window.location.href = 'admin.html';
+}
+
 let toppersDatabase = JSON.parse(localStorage.getItem('toppersDatabase')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -2,6 +2,11 @@
    EVENTS ADMIN FUNCTIONALITY
 ========================================= */
 
+// Authentication Check - Redirect to login if not authenticated
+if (!localStorage.getItem('adminToken')) {
+    window.location.href = 'admin.html';
+}
+
 let eventsDatabase = [];
 
 document.addEventListener('DOMContentLoaded', () => {

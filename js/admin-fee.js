@@ -2,6 +2,11 @@
    FEE STRUCTURE ADMIN FUNCTIONALITY
 ========================================= */
 
+// Authentication Check - Redirect to login if not authenticated
+if (!localStorage.getItem('adminToken')) {
+    window.location.href = 'admin.html';
+}
+
 let feeDatabase = JSON.parse(localStorage.getItem('feeDatabase')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
