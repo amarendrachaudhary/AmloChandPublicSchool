@@ -1888,67 +1888,89 @@ footer.site-footer {
 ========================================= */
 
 @media (max-width: 768px) {
-    /* Admission page - Two column grid to single column */
-    #admission > div[style*="grid-template-columns:1fr 1fr"] {
-        grid-template-columns: 1fr !important;
+    /* Force all grid layouts to single column on mobile */
+    #admission > div,
+    #downloads > div,
+    #fee > div > div {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
     }
     
-    /* Fee structure - Discount cards grid */
-    #fee div[style*="grid-template-columns:1fr 1fr 1fr"] {
-        grid-template-columns: 1fr !important;
+    /* Remove any grid-template-columns */
+    #admission > div > *,
+    #downloads > div > *,
+    #fee > div > div > * {
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
-    /* Downloads - Two column grid to single column */
-    #downloads > div[style*="grid-template-columns:1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-    }
-    
-    /* Fee table - Make scrollable horizontally */
-    .fee-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+    /* Fee table wrapper - horizontal scroll */
+    #fee div[style*="overflow-x"] {
+        overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;
+        margin: 0 -20px;
+        padding: 0 20px;
     }
     
-    .fee-table thead,
-    .fee-table tbody,
-    .fee-table tr {
-        display: table;
+    /* Fee table - minimum width to prevent overlap */
+    .fee-table {
+        min-width: 600px;
         width: 100%;
-        table-layout: fixed;
+        display: table;
     }
     
     .fee-table th,
     .fee-table td {
-        padding: 12px 10px;
-        font-size: 0.8rem;
+        padding: 10px 8px;
+        font-size: 0.75rem;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    .fee-table th {
+        font-size: 0.7rem;
     }
     
     .fee-table th small,
     .fee-table td small {
         display: block;
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+        margin-top: 2px;
+    }
+    
+    /* Discount cards - stack vertically */
+    #fee div[style*="grid-template-columns:1fr 1fr 1fr"] {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    #fee div[style*="grid-template-columns:1fr 1fr 1fr"] > div {
+        width: 100% !important;
     }
     
     /* Form rows - Stack on mobile */
     .form-row {
+        display: flex !important;
         flex-direction: column !important;
+        gap: 0 !important;
     }
     
     .form-row .form-group {
         width: 100% !important;
+        margin-bottom: 16px;
     }
     
     /* Resource tabs */
     .resources-tabs {
+        display: flex;
         flex-wrap: wrap;
         gap: 8px;
     }
     
     .tab-btn {
-        flex: 1 1 auto;
-        min-width: 120px;
+        flex: 1 1 calc(50% - 4px);
+        min-width: 140px;
         font-size: 0.85rem;
         padding: 12px 16px;
     }
@@ -1956,32 +1978,53 @@ footer.site-footer {
     .tab-btn i {
         font-size: 0.9rem;
     }
+    
+    /* Resource cards in downloads */
+    .resource-card {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
 }
 
 @media (max-width: 480px) {
     /* Extra small screens */
+    .fee-table {
+        min-width: 550px;
+    }
+    
     .fee-table th,
     .fee-table td {
-        padding: 10px 8px;
-        font-size: 0.75rem;
+        padding: 8px 6px;
+        font-size: 0.7rem;
+    }
+    
+    .fee-table th {
+        font-size: 0.65rem;
     }
     
     .tab-btn {
+        flex: 1 1 100%;
         font-size: 0.8rem;
         padding: 10px 12px;
     }
     
     /* Smaller cards on mobile */
     .glass-card {
-        padding: 20px !important;
+        padding: 16px !important;
     }
     
     .section-title h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .section-title i {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Adjust section title padding */
+    .section-title + p[style*="padding-left"] {
+        padding-left: 0 !important;
     }
 }
 
