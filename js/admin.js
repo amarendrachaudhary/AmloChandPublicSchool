@@ -2,6 +2,11 @@
    ADMIN PANEL FUNCTIONALITY
 ========================================= */
 
+// Auto-fix: Ensure both tokens exist together
+if (localStorage.getItem('adminLoggedIn') === 'true' && !localStorage.getItem('adminToken')) {
+    localStorage.setItem('adminToken', 'true');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     checkLoginStatus();
     initLoginForm();
