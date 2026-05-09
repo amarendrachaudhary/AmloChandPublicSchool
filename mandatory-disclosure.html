@@ -39,10 +39,11 @@
             vertical-align: middle;
         }
         .disclosure-table td:first-child {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--accent, #ec4899);
             width: 60px;
             text-align: center;
+            font-size: 0.95rem;
         }
         .dl-btn {
             display: inline-flex;
@@ -57,6 +58,7 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s;
+            white-space: nowrap;
         }
         .dl-btn:hover {
             background: rgba(37, 99, 235, 0.35);
@@ -64,21 +66,8 @@
             color: #fff;
             transform: translateY(-1px);
         }
-        .dl-btn i {
-            font-size: 0.78rem;
-        }
-        .info-badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #6ee7b7;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-left: 8px;
-            vertical-align: middle;
-        }
+        .dl-btn i { font-size: 0.78rem; }
+        .doc-icon { margin-right: 10px; font-size: 1rem; width: 18px; text-align: center; }
     </style>
 </head>
 <body>
@@ -146,7 +135,7 @@
         <!-- Disclosure Table -->
         <div class="glass glass-card reveal" style="padding: 32px;">
             <div class="section-title" style="margin-bottom: 24px;">
-                <i class="fas fa-file-alt" style="color: var(--secondary, #ec4899);"></i>
+                <i class="fas fa-folder-open" style="color: var(--secondary, #ec4899);"></i>
                 <h2>Documents &amp; Information</h2>
             </div>
 
@@ -154,140 +143,90 @@
                 <table class="disclosure-table">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th style="width:60px;">#</th>
                             <th>Document / Information</th>
-                            <th>Download</th>
+                            <th style="width:140px;">Download</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>
-                                <i class="fas fa-building" style="color:#60a5fa; margin-right:8px;"></i>
-                                GENERAL INFORMATION
-                            </td>
+                            <td><i class="doc-icon fas fa-info-circle" style="color:#60a5fa;"></i>GENERAL INFORMATION</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>
-                                <i class="fas fa-certificate" style="color:#fbbf24; margin-right:8px;"></i>
-                                AFFILIATION LETTER
-                            </td>
+                            <td><i class="doc-icon fas fa-certificate" style="color:#fbbf24;"></i>AFFILIATION LETTER</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>
-                                <i class="fas fa-fire-extinguisher" style="color:#f87171; margin-right:8px;"></i>
-                                REGISTRATION
-                            </td>
+                            <td><i class="doc-icon fas fa-registered" style="color:#a78bfa;"></i>REGISTRATION</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>
-                                <i class="fas fa-stamp" style="color:#a78bfa; margin-right:8px;"></i>
-                                NO OBJECTION CERTIFICATE
-                            </td>
+                            <td><i class="doc-icon fas fa-check-circle" style="color:#34d399;"></i>NO OBJECTION CERTIFICATE</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>
-                                <i class="fas fa-scroll" style="color:#34d399; margin-right:8px;"></i>
-                                RECOGNITION CERTIFICATE
-                            </td>
+                            <td><i class="doc-icon fas fa-award" style="color:#f472b6;"></i>RECOGNITION CERTIFICATE</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>6</td>
-                            <td>
-                                <i class="fas fa-hand-holding-water" style="color:#22d3ee; margin-right:8px;"></i>
-                                BULDING SAFETY CERTIFICATE
-                            </td>
+                            <td><i class="doc-icon fas fa-building" style="color:#22d3ee;"></i>BUILDING SAFETY CERTIFICATE</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>7</td>
-                            <td>
-                                <i class="far fa-calendar-alt" style="color:#f472b6; margin-right:8px;"></i>
-                                FIRE SAFETY CERTIFICATE
-                                <span class="info-badge">2025-26</span>
-                            </td>
+                            <td><i class="doc-icon fas fa-fire-extinguisher" style="color:#f87171;"></i>FIRE SAFETY CERTIFICATE</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>8</td>
-                            <td>
-                                <i class="fas fa-rupee-sign" style="color:#fbbf24; margin-right:8px;"></i>
-                                AFFILIATIONOR SELF CERTIFICATION
-                                <span class="info-badge">2025-26</span>
-                            </td>
+                            <td><i class="doc-icon fas fa-file-signature" style="color:#fbbf24;"></i>AFFILIATION OR SELF CERTIFICATION</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>9</td>
-                            <td>
-                                <i class="fas fa-map-marked-alt" style="color:#60a5fa; margin-right:8px;"></i>
-                                WATER HEALTH AND SANITATION CERTIFICATE
-                            </td>
+                            <td><i class="doc-icon fas fa-tint" style="color:#60a5fa;"></i>WATER HEALTH AND SANITATION CERTIFICATE</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>10</td>
-                            <td>
-                                <i class="fas fa-users" style="color:#a78bfa; margin-right:8px;"></i>
-                                FEE STRUCTURE OF THE SCHOOL
-                            </td>
+                            <td><i class="doc-icon fas fa-rupee-sign" style="color:#34d399;"></i>FEE STRUCTURE OF THE SCHOOL</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>11</td>
-                            <td>
-                                <i class="fas fa-chart-line" style="color:#34d399; margin-right:8px;"></i>
-                                ANNUAL ACADEMIC CALANDER
-                            </td>
+                            <td><i class="doc-icon far fa-calendar-alt" style="color:#f472b6;"></i>ANNUAL ACADEMIC CALENDAR</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>12</td>
-                            <td>
-                                <i class="fas fa-file-signature" style="color:#f472b6; margin-right:8px;"></i>
-                                SCHOOL MANAGEMENT COMMITTEE
-                            </td>
+                            <td><i class="doc-icon fas fa-user-tie" style="color:#a78bfa;"></i>SCHOOL MANAGEMENT COMMITTEE</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>13</td>
-                            <td>
-                                <i class="fas fa-paperclip" style="color:#fbbf24; margin-right:8px;"></i>
-                                PARENTS TEACHERS ASSOCIATION MEMBERS
-                            </td>
+                            <td><i class="doc-icon fas fa-handshake" style="color:#22d3ee;"></i>PARENTS TEACHERS ASSOCIATION MEMBERS</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>14</td>
-                            <td>
-                                <i class="fas fa-paperclip" style="color:#fbbf24; margin-right:8px;"></i>
-                                TESULT OF THE BOARD EXAMINATION (CLASS X AND XII)
-                            </td>
+                            <td><i class="doc-icon fas fa-chart-bar" style="color:#fbbf24;"></i>RESULT OF THE BOARD EXAMINATION (CLASS X AND XII)</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>15</td>
-                            <td>
-                                <i class="fas fa-paperclip" style="color:#fbbf24; margin-right:8px;"></i>
-                                STAFF STATEMENT
-                            </td>
+                            <td><i class="doc-icon fas fa-chalkboard-teacher" style="color:#f87171;"></i>STAFF STATEMENT</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                         <tr>
                             <td>16</td>
-                            <td>
-                                <i class="fas fa-paperclip" style="color:#fbbf24; margin-right:8px;"></i>
-                                STAFF TEACHING AND INFRASTRUCTURE
-                            </td>
+                            <td><i class="doc-icon fas fa-school" style="color:#60a5fa;"></i>STAFF TEACHING AND INFRASTRUCTURE</td>
                             <td><a href="#" class="dl-btn"><i class="fas fa-download"></i> Download</a></td>
                         </tr>
                     </tbody>
@@ -299,7 +238,7 @@
         <div class="glass glass-card reveal" style="padding: 20px 28px; margin-top: 24px; border-left: 3px solid rgba(245,158,11,0.6);">
             <p style="margin:0; font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.7;">
                 <i class="fas fa-exclamation-triangle" style="color:#fbbf24; margin-right:8px;"></i>
-                <strong style="color:rgba(255,255,255,0.9);">Note:</strong> All documents are uploaded as per CBSE Affiliation Bye-Laws. For any queries regarding the above documents, please contact the school administration at
+                <strong style="color:rgba(255,255,255,0.9);">Note:</strong> All documents are uploaded as per CBSE Affiliation Bye-Laws. For any queries, please contact the school administration at
                 <a href="mailto:info@acps.edu.in" style="color:#60a5fa;">info@acps.edu.in</a>.
             </p>
         </div>
