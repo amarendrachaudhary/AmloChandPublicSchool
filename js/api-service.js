@@ -284,6 +284,34 @@ class APIService {
             method: 'DELETE'
         });
     }
+
+    // ========================================
+    // MANDATORY DISCLOSURE ENDPOINTS
+    // ========================================
+    
+    async getDisclosureDocuments() {
+        return await this.request('/disclosure');
+    }
+
+    async addDisclosureDocument(documentData) {
+        return await this.request('/disclosure', {
+            method: 'POST',
+            body: JSON.stringify(documentData)
+        });
+    }
+
+    async updateDisclosureDocument(id, documentData) {
+        return await this.request(`/disclosure/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(documentData)
+        });
+    }
+
+    async deleteDisclosureDocument(id) {
+        return await this.request(`/disclosure/${id}`, {
+            method: 'DELETE'
+        });
+    }
 }
 
 // Create global API instance

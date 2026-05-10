@@ -311,6 +311,30 @@ class Faculty(db.Model):
         }
 
 
+class DisclosureDocument(db.Model):
+    __tablename__ = 'disclosure_documents'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255), nullable=False)
+    file_url = db.Column(db.String(500), nullable=False)
+    file_name = db.Column(db.String(255))
+    display_order = db.Column(db.Integer, default=0)
+    is_active = db.Column(db.Boolean, default=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'file_url': self.file_url,
+            'file_name': self.file_name,
+            'display_order': self.display_order,
+            'is_active': self.is_active,
+            'created_at': self.created_at.isoformat(),
+            'updated_at': self.updated_at.isoformat()
+        }
+
+
 # ============================================
 # AUTHENTICATION DECORATOR
 # ============================================
@@ -776,6 +800,63 @@ def delete_faculty(current_admin, id):
     db.session.commit()
     
     return jsonify({'message': 'Faculty member deleted'}), 200
+
+
+# ============================================
+# MANDATORY DISCLOSURE ROUTES
+# ============================================
+
+@app.route('/api/disclosure', methods=['GET'])
+def get_disclosure_documents():
+    documents = DisclosureDocument.query.filter_by(is_active=True).order_by(
+        DisclosureDocument.display_order, 
+        DisclosureDocument.created_at
+    ).all()
+    return jsonify([doc.to_dict() for doc in documents]), 200
+
+
+@app.route('/api/disclosure', methods=['POST'])
+@token_required
+def add_disclosure_document(current_admin):
+    data = request.get_json()
+    
+    document = DisclosureDocument(
+        title=data['title'],
+        file_url=data['file_url'],
+        file_name=data.get('file_name'),
+        display_order=data.get('display_order', 0)
+    )
+    
+    db.session.add(document)
+    db.session.commit()
+    
+    return jsonify(document.to_dict()), 201
+
+
+@app.route('/api/disclosure/<int:id>', methods=['PUT'])
+@token_required
+def update_disclosure_document(current_admin, id):
+    document = DisclosureDocument.query.get_or_404(id)
+    data = request.get_json()
+    
+    document.title = data.get('title', document.title)
+    document.file_url = data.get('file_url', document.file_url)
+    document.file_name = data.get('file_name', document.file_name)
+    document.display_order = data.get('display_order', document.display_order)
+    
+    db.session.commit()
+    
+    return jsonify(document.to_dict()), 200
+
+
+@app.route('/api/disclosure/<int:id>', methods=['DELETE'])
+@token_required
+def delete_disclosure_document(current_admin, id):
+    document = DisclosureDocument.query.get_or_404(id)
+    db.session.delete(document)
+    db.session.commit()
+    
+    return jsonify({'message': 'Document deleted'}), 200
 
 
 # ============================================

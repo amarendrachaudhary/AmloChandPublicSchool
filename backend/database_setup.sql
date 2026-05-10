@@ -139,6 +139,18 @@ CREATE TABLE IF NOT EXISTS faculty (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Create disclosure_documents table
+CREATE TABLE IF NOT EXISTS disclosure_documents (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    file_url VARCHAR(500) NOT NULL,
+    file_name VARCHAR(255),
+    display_order INTEGER DEFAULT 0,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Create indexes for better performance
 CREATE INDEX IF NOT EXISTS idx_notices_date ON notices(date DESC);
 CREATE INDEX IF NOT EXISTS idx_events_date ON events(date ASC);
@@ -148,6 +160,7 @@ CREATE INDEX IF NOT EXISTS idx_results_roll ON student_results(roll_number);
 CREATE INDEX IF NOT EXISTS idx_results_dob ON student_results(dob);
 CREATE INDEX IF NOT EXISTS idx_toppers_order ON toppers(display_order ASC, created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_faculty_order ON faculty(display_order ASC, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_disclosure_order ON disclosure_documents(display_order ASC, created_at ASC);
 
 -- Insert default admin user (password: admin123)
 -- Using bcrypt hash for password 'admin123'
@@ -194,7 +207,25 @@ INSERT INTO faculty (name, designation, subject, icon, display_order) VALUES
 ('Ms. Priya Verma', 'Head - Mathematics', 'M.Sc. Mathematics', 'fa-calculator', 4)
 ON CONFLICT DO NOTHING;
 
+-- Insert default disclosure documents
+INSERT INTO disclosure_documents (title, file_url, file_name, display_order) VALUES
+('Building Safety Certificate', '#', 'building-safety-certificate.pdf', 1),
+('Society Registration Certificate', '#', 'society-registration.pdf', 2),
+('Fire Safety Certificate', '#', 'fire-safety-certificate.pdf', 3),
+('Latest Approval Letter', '#', 'cbse-approval-letter.pdf', 4),
+('NOC ACPS', '#', 'noc-acps.pdf', 5),
+('Sanitation Certificate', '#', 'sanitation-certificate.pdf', 6),
+('School Calendar 2025-26', '#', 'school-calendar-2025-26.pdf', 7),
+('Fee Structure 2025-26', '#', 'fee-structure-2025-26.pdf', 8),
+('Land Certificate', '#', 'land-certificate.pdf', 9),
+('Society Renewal Certificate', '#', 'society-renewal.pdf', 10),
+('Drinking Water Certificate', '#', 'drinking-water-certificate.pdf', 11),
+('Self Declaration Certificate', '#', 'self-declaration.pdf', 12),
+('Appendix – IX', '#', 'appendix-ix.pdf', 13)
+ON CONFLICT DO NOTHING;
+
 -- Success message
 \echo 'Database setup completed successfully!'
-\echo 'Tables created: 10'
+\echo 'Tables created: 11'
 \echo 'Default admin user created: admin / admin123'
+\echo 'Default disclosure documents added: 13'
