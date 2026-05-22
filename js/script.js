@@ -894,9 +894,12 @@ async function renderToppers() {
         } else {
             // Use default toppers if none added from admin
             toppers = [
-                { name: 'Rahul Sharma', rank: 'Board Topper', score: '98.4%', stream: 'Class XII' },
-                { name: 'Priya Verma', rank: 'Board Topper', score: '97.2%', stream: 'Class XII' },
-                { name: 'Arjun Mehta', rank: 'Board Topper', score: '96.8%', stream: 'Class X' }
+               { name: 'Divyansh Verma', rank: 'Board Topper', score: '89.0%', stream: 'Class XII' },
+                { name: 'Kamya Varshney', rank: 'Board Topper', score: '88.0%', stream: 'Class XII' },
+                { name: 'Sejal Pundhir', rank: 'Board Topper', score: '86.0%', stream: 'Class XII' },
+                { name: 'Prarthna Sharma', rank: 'Board Topper', score: '85.0%', stream: 'Class XII' },
+                { name: 'Ujjawal Yadav', rank: 'Board Topper', score: '85.0%', stream: 'Class XII' },
+                { name: 'Rubab Ambar', rank: 'Board Topper', score: '85.0%', stream: 'Class XII' }
             ];
         }
     }
