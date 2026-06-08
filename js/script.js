@@ -933,8 +933,8 @@ async function renderStaff() {
         } else {
             // Use default faculty if none added from admin
             staff = [
-                { name: 'Dr. A. K. Singh', designation: 'Principal', subject: 'M.Ed, Ph.D', icon: 'fa-user-tie', qualification: 'Ph.D in Education, M.Ed', experience: '25 years', email: 'principal@acps.edu.in', remarks: 'Visionary leader with extensive experience in educational administration and curriculum development.', priority: 1 },
-                { name: 'Mrs. Sunita Sharma', designation: 'Director', subject: 'M.A. English', icon: 'fa-chalkboard-teacher', qualification: 'M.A. English Literature', experience: '20 years', email: 'director@acps.edu.in', remarks: 'Dedicated educator with a passion for English literature and student mentorship.', priority: 2 },
+                { name: 'Mr. Anoop Agrawal', designation: 'Principal', subject: 'M.Ed, Ph.D', icon: 'fa-user-tie', qualification: 'Ph.D in Education, M.Ed', experience: '25 years', email: 'principal@acps.edu.in', remarks: 'Visionary leader with extensive experience in educational administration and curriculum development.', priority: 2, image: 'assets/images/principal.jpg' },
+                { name: 'Mr. Vipin Varshney', designation: 'Director', subject: 'M.A. English', icon: 'fa-chalkboard-teacher', qualification: 'M.A. English Literature', experience: '20 years', email: 'director@acps.edu.in', remarks: 'Dedicated educator with a passion for English literature and student mentorship.', priority: 1, image: 'assets/images/director.jpg' },
                 { name: 'Mr. Rajesh Kumar', designation: 'School Owner', subject: 'MBA, B.Ed', icon: 'fa-user-tie', qualification: 'MBA, B.Ed', experience: '30 years', email: 'owner@acps.edu.in', remarks: 'Founder and visionary behind Amol Chand Public School with decades of experience in education.', priority: 3 },
                 { name: 'Ms. Priya Verma', designation: 'Head - Mathematics', subject: 'M.Sc. Mathematics', icon: 'fa-calculator', qualification: 'M.Sc. Mathematics, B.Ed', experience: '15 years', email: 'priya.v@acps.edu.in', remarks: 'Innovative mathematics teacher known for making complex concepts accessible to students.' },
                 { name: 'Dr. Amit Patel', designation: 'Head - English', subject: 'M.A. English Lit.', icon: 'fa-book', qualification: 'Ph.D in English Literature', experience: '22 years', email: 'amit.p@acps.edu.in', remarks: 'Published author and literary critic with a deep understanding of English literature.' },
@@ -946,19 +946,23 @@ async function renderStaff() {
     // Show only top 3 priority members on homepage (Principal, Director, Owner)
     const topStaff = staff
         .sort((a, b) => (a.priority || 999) - (b.priority || 999))
-        .slice(0, 4);
+        .slice(0, 3);
 
-    // Render faculty cards
-    container.innerHTML = topStaff.map((member, index) => `
+    // Render faculty cards with real images
+    container.innerHTML = topStaff.map((member, index) => {
+        const avatarContent = member.image
+            ? `<img src="${member.image}" alt="${member.name}" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.2);">`
+            : `<i class="fas ${member.icon || 'fa-user-tie'}" style="font-size:1.4rem;"></i>`;
+        return `
         <div class="glass glass-card reveal faculty-card" data-faculty-id="${index}" style="padding:24px; text-align:center;">
-            <div class="faculty-avatar">
-                <i class="fas ${member.icon}"></i>
+            <div class="faculty-avatar" style="${member.image ? 'background:transparent;width:70px;height:70px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;' : ''}">
+                ${avatarContent}
             </div>
             <h3 style="font-size:1rem; margin-bottom:6px;">${member.name}</h3>
             <p style="color:var(--primary); font-size:0.85rem; font-weight:600; margin-bottom:4px;">${member.designation}</p>
             <p style="color:var(--text-muted); font-size:0.8rem;">${member.subject}</p>
         </div>
-    `).join('');
+    `; }).join('');
 
     // Store all staff data globally for faculty page
     window.facultyData = staff;
@@ -1276,7 +1280,11 @@ function showFacultyModal(faculty) {
     const modal = document.getElementById('facultyModal');
     
     const avatarEl = document.getElementById('facultyModalAvatar');
-    avatarEl.innerHTML = `<i class="fas ${faculty.icon}" style="font-size:3rem;"></i>`;
+    if (faculty.image) {
+        avatarEl.innerHTML = `<img src="${faculty.image}" alt="${faculty.name}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+    } else {
+        avatarEl.innerHTML = `<i class="fas ${faculty.icon || 'fa-user-tie'}" style="font-size:3rem;"></i>`;
+    }
     
     document.getElementById('facultyModalName').textContent = faculty.name;
     document.getElementById('facultyModalDesignation').textContent = faculty.designation;

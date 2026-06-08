@@ -451,12 +451,12 @@ textarea:focus-visible {
 ========================================= */
 .hero {
     min-height: 100vh;
-    min-height: 100svh; /* Better mobile viewport handling */
+    min-height: 70svh; /* Better mobile viewport handling */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 110px 20px 60px; /* Increased top padding to fully clear the fixed header */
+    padding: 110px 20px 10px; /* Increased top padding to fully clear the fixed header */
     box-sizing: border-box;
 }
 
@@ -1873,7 +1873,7 @@ footer.site-footer {
     transform: translateY(-6px);
 }
 
-.faculty-avatar {
+.faculty-card .faculty-avatar {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -1885,9 +1885,16 @@ footer.site-footer {
     font-size: 1.6rem;
     color: white;
     flex-shrink: 0;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.2);
 }
 
-
+.faculty-card .faculty-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
 /* =========================================
    MOBILE RESPONSIVE FIXES FOR ADMISSION, FEE & RESULT
@@ -2078,5 +2085,96 @@ footer.site-footer {
     
     .result-table th {
         font-size: 0.7rem;
+    }
+}
+
+/* =========================================
+   FACULTY DETAIL MODAL
+========================================= */
+.faculty-detail-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.faculty-detail-left {
+    text-align: center;
+}
+
+.faculty-detail-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 3rem;
+    color: white;
+    overflow: hidden;
+    border: 4px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.faculty-info-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.faculty-info-row:last-child {
+    border-bottom: none;
+}
+
+.faculty-info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(37,99,235,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #60a5fa;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.faculty-info-content {
+    flex: 1;
+}
+
+.faculty-info-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.faculty-info-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-bright);
+}
+
+@media (max-width: 600px) {
+    .faculty-detail-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .faculty-detail-avatar {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 16px;
+    }
+
+    .faculty-info-row {
+        justify-content: center;
     }
 }

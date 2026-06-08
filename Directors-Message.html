@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director's Message - Amol Chand Public School</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <style>
+       .container .heading {
+    display: flex;             /* Changed to flex to easily center the inline-flex child */
+    justify-content: center;   /* Centers the heading horizontally */
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.container .heading {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.container .heading h3 {
+    font-size: 32px;
+    color: var(--secondary);
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;   /* Stacks the text and the underline vertically */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Creating the custom underline effect underneath the h3 text */
+.container .heading h3::after {
+    content: 'x';             /* The character in the middle */
+    font-size: 16px;          /* Size of the 'x' */
+    color: #ffffff; 
+    display: flex;
+    align-items: center;
+    margin-top: none;         /* Space between the heading text and the underline */
+    width: 100%;              /* Allows the lines to spread out */
+    justify-content: center;
+}
+
+/* Left side line */
+.container .heading h3::after {
+   
+    background: transparent;  /* Transparent background to only show the text and the dashes */
+    content: '<—------ x ------—>';         /* Using long dashes for a cleaner look */
+    letter-spacing: 4px;      /* Spacing out the dashes and the x */
+    opacity: 0.7;             /* Slightly softer look for the decorative line */
+}
+        .message-container {
+            display: grid;
+            grid-template-columns: 1fr 450px;
+            gap: 50px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+        .message-container h3{
+            display: inline;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .message-content-wrapper {
+            grid-column: 1;
+        }
+
+        .message-image {
+            grid-column: 2;
+            grid-row: 1 / 2;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .message-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .message-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .message-top {
+            margin-bottom: 20px;
+        }
+
+        .message-bottom {
+            margin-top: 20px;
+        }
+
+        .message-content h3 {
+            font-size: 28px;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .message-content .name {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .message-content .designation {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .message-content p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--secondary);
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 5px solid var(--secondary);
+        }
+
+        .message-box p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        .signature {
+            margin-top: 40px;
+        }
+
+        .signature-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .signature-title {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 1024px) {
+            .message-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .message-image {
+                grid-column: 1;
+                justify-content: center;
+            }
+
+            .message-image img {
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .message-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .message-image {
+                grid-column: 1;
+                justify-content: center;
+            }
+
+            .message-image img {
+               margin-bottom: 40px;
+               
+
+                max-width: 280px;
+            }
+
+            .message-content h3 {
+                font-size: 22px;
+            }
+
+            .message-content p {
+                font-size: 15px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="site-header" id="navbar">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div>
+                    <div class="school-name">Amol Chand Public School</div>
+                    <div class="school-tagline">Empowering Future Leaders</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" onclick="return false;">
+                        About <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        <li><a href="ourvision&mission.html">Our Vision & Mission</a></li>
+                        <li><a href="Directors-Message.html">Director's Message</a></li>
+                        <li><a href="principals-message.html">Principal's Message</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" onclick="return false;">
+                        Academics <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html"><i class="fas fa-book-open"></i> Syllabus</a></li>
+                        <li><a href="result.html"><i class="fas fa-chart-line"></i> Results</a></li>
+                        <li><a href="activity.html"><i class="fas fa-running"></i> Activities</a></li>
+                        <li><a href="toppers.html"><i class="fas fa-trophy"></i> Toppers</a></li>
+                        <li><a href="faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    </ul>
+                </li>
+                <li><a href="mandatory-disclosure.html">Mandatory Disclosure</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 100px 20px;">
+        <!-- Message Section -->
+         <div class="heading"><h3>Director's Message</h3></div>
+        <div class="message-container reveal">
+            <div class="message-content-wrapper">
+                <div class="message-content message-top">
+                
+
+                     <p>
+              As the Director of <b>Amol Chand Public School, Hathras,</b> I feel privileged to work with a team of dedicated, innovative, and compassionate educators, along with supportive parents and enthusiastic students.
+            </p>
+            <p>
+              Each day at our school brings fresh experiences, meaningful learning, and the opportunity to positively impact young lives. More often than not, it is our students who bring light and inspiration to my day through their energy and curiosity.
+            </p>
+             <p>
+              It is my pleasure to welcome you to our official school website. Thank you for taking the time to visit. This platform is designed to provide you with valuable information and insights into our academic environment and student life.
+            </p>
+                </div>
+
+                <div class="message-content message-bottom">
+            <p>
+              The website highlights the wide range of opportunities and experiences we offer our students and serves as a window into their creativity, achievements, and growth. We hope your visit gives you a glimpse of the vibrant, nurturing atmosphere that defines our school.
+            </p>
+            <p class="fw-semibold">
+              Warm regards,<br />
+              Vipin Varshney<br />
+              <span class="fst-italic">Managing Director</span><br />
+              Amol Chand Public School, Hathras
+            </p>
+                    </div>
+            </div>
+
+            <div class="message-image">
+                <img src="assets/images/director.jpg" alt="Director of Amol Chand Public School" loading="lazy">
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h3 style="font-size: 24px; margin-bottom: 20px;">Explore More from Our Leadership</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">Understand the leadership and values that guide our institution.</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="principals-message.html" class="btn btn-outline"><i class="fas fa-users"></i> Principal's Message</a>
+                <a href="admission.html" class="btn"><i class="fas fa-graduation-cap"></i> Join ACPS</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container" style="margin-bottom:0;">
+                    <div class="logo-icon">AC</div>
+                    <div>
+                        <div class="school-name">Amol Chand Public School</div>
+                        <div class="school-tagline">Empowering Future Leaders</div>
+                    </div>
+                </div>
+                <p>Dedicated to nurturing minds and building character since 1985. CBSE affiliated school providing holistic education for classes Pre-Nursery to XII.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="Directors-Message.html">Director's Message</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="admission.html">Admissions</a></li>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="admission.html#fee">Fee Structure</a></li>
+                    <li><a href="result.html">Result Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:info@amolchandschool.edu.in">info@acps.edu.in</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> <a href="contact.html">Visit Us / Send Message</a></li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 4:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2026</span> Amol Chand Public School. All rights reserved.</p>
+            <p style="display:flex; gap:20px;">
+                <a href="#" style="color:var(--text-muted); font-size:0.82rem;">Privacy Policy</a>
+                <a href="#" style="color:var(--text-muted); font-size:0.82rem;">Terms of Use</a>
+                <a href="admin.html" style="color:var(--text-muted); font-size:0.82rem;"><i class="fas fa-lock"></i> Admin</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/ripple-effect.js"></script>
+</body>
+</html>
